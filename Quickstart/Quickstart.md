@@ -1,9 +1,9 @@
-##快速启动
+## 快速启动
 
 是不是很渴望马上开始啊？这篇文档将会很好的向你介绍Flask。假设你已经安装好了Flask。如果还没有安装的话，
 请查看[Installation](http://flask.pocoo.org/docs/0.12/installation/#installation)部分。
 
-###一个小型的应用
+### 一个小型的应用
 一个很小型的Flask应用是像下面这样的：
 ```python
 from flask import Flask
@@ -46,7 +46,7 @@ def hello_world():
 
 现在请转向[http://127.0.0.1:5000/](http://127.0.0.1:5000/),你将会看到自己的hello world问候！
 
-###外部可访问的服务器
+### 外部可访问的服务器
 
 如果你运行上面的服务，你会发现仅仅你自己的电脑可以访问这个服务器，互联网上的其他电脑不能访问。
 这是默认值，因为在调试模式下，应用程序的用户可以在计算机上执行任意Python代码。
@@ -57,19 +57,19 @@ def hello_world():
     
 这将会告诉你的系统，监听所有公用的IP地址。
 
-###如果服务没有启动怎么办？
+### 如果服务没有启动怎么办？
 
 如果**python -m flask**失败，或者**flask**不存在，可能会有多种原因导致的。
 首先，你需要查看错误信息。
 
-####旧版本的Flask
+#### 旧版本的Flask
 
 在0.11版本之前的Flask，会有不同的启动应用的方式。简单地说，**flask**命令行不存在，
 **python -m flask**也一样不存在。在这样的情况下，你有两种选择：一种是升级到新版本的Flask，
 另一种是查看[Development Server](http://flask.pocoo.org/docs/0.12/server/#server)
 文档，选择一个可用的启动方法。
 
-###无效的导入名称
+### 无效的导入名称
 
 **FLASK_APP**环境变量是在**flask run**的时候，需要导入的模块名称。
 如果模块名称不正确，您将在启动时收到导入错误（或者当您导航到应用程序时启用调试）。
@@ -77,7 +77,7 @@ def hello_world():
 
 最常见的错误是打字错误，或者没有创建应用对象。
 
-###调试模式
+### 调试模式
 
 （想要记录错误和堆栈跟踪？请参阅[Applications Errors](http://flask.pocoo.org/docs/0.12/errorhandling/#application-errors)）
 
@@ -101,7 +101,7 @@ def hello_world():
 
 在[Development Server](http://flask.pocoo.org/docs/0.12/server/#server)文档中详细解释了更多的参数。
 
-###注意
+### 注意
 
 即使交互式调试器在分支环境中不起作用（这使得几乎不可能在生产服务器上使用）。
 它仍然允许执行任意代码。这使得它成为主要的安全风险，因此绝不能在生产环境上使用。
@@ -112,7 +112,7 @@ def hello_world():
 Hava another debugger in ming? see [Working with Debubbers](http://flask.pocoo.org/docs/0.12/errorhandling/#working-with-debuggers)
 
 
-###路由
+### 路由
 
 现代的移动应用程序都有美观的URL地址。这便于人们记忆，这对于使用较慢网络连接的移动设备的应用来说尤其如此。
 如果用户可以直接进入所需的页面，而不必打索引页面，则更有可能他们会喜欢该页面，并且下次再来。
@@ -131,7 +131,7 @@ def hello():
 ```
 当然，不仅仅如此！您可以使URL的某些部分动态，并将多个规则附加到一个函数。
 
-###变量规则
+### 变量规则
 
 向URL中添加变量，你可以这样标记 **<variable_name>** 。
 这个部分会以关键字的形式出入到你的函数中，你也可以选择使用类型声明 **<converter:variable_name>**
@@ -158,7 +158,7 @@ def show_post(post_id):
     |any     | mathches one of the items provided             |
     |uuid    | accepts UUID strings                      |
     
-###特殊的URL/重定向行为
+### 特殊的URL/重定向行为
 
 Flask的URL规则基于Werkzeug的路由模块。他的这个模块背后的想法是确保基于Apache和早期的HTTP服务器规定的先例的漂亮而唯一的URL。
 
@@ -181,7 +181,7 @@ def about():
 这种行为允许相对URL继续工作，即使省略尾部斜线，与Apache和其他服务器的工作原理一致。
 此外，URL将保持唯一，这有助于搜索引擎避免对同一页面进行两次索引。
 
-###构建URL
+### 构建URL
 
 如果可以匹配URL，是否Flask也可以生成它们？回答是肯定的。你可以使用**url_for()**函数把一个URL绑定到特定的
 视图函数。它允许函数名作为第一个参数，和其他的一些关键字参数，每一个对应于URL中的可变部分。
@@ -221,7 +221,7 @@ with app.test_request_context():
 2. URL构建将为您透明地处理特殊字符和Unicode数据的转义，因此您不必处理它们。
 3. 如果您的应用程序位于URL根目录之外 - 例如，**/myapplication** 而不是 **/** , **url_for()** 将会很好的处理他们。
 
-###HTTP方法
+### HTTP方法
 
 HTTP（Web应用程序直间进行沟通的协议）知道用于访问URL的不同方法。默认的，一个路由仅仅对**GET**请求进行回应。
 但是你可以通过向**route()**装饰器增加**methods**参数来改变。下面是一些示例：
@@ -241,34 +241,34 @@ def login():
 
 你是不是不知道什么是HTTP方法啊？不必担心，这里有一个HTTP方法的快速介绍，并且解释为什么它们很重要：
 
-####GET
+#### GET
     浏览器告诉服务器只需获取存储在该页面上的信息并发送它。这可能是最常用的方法。
     
-####HEAD
+#### HEAD
 
 浏览器告诉服务器获取信息，但它只对页眉感兴趣，而不是页面的内容。一个应用程序应该可以处理这样的请求，就像接到一个**GET**请求，
 但是不返回实际的内容。在Flask中，你一点儿也不需要为此担心，底层的Werkzeug库会为你做这些。
 
-####POST
+#### POST
 
 浏览器告诉服务器，它想向URL中推送一些新的信息，并且服务器需要保证数据被保存了，而且只保存了一次。
 这是一种HTML表单(forms)经常向服务器传送数据的方式。
 
-####PUT
+#### PUT
 
 和**POST**相似，但服务器可能会多次触发存储过程来覆盖旧值。也许你会疑问，为什么需要这个呢？但是这样做确实有一些好处。
 假如在传输数据的时候连接断开了，在这种情况下，浏览器和服务器之间的系统可能会第二次安全地接收请求，而不会破坏事件。
 如果使用的是**POST**请求的话，就没法实现，因为只会被触发一次。
 
-####DELETE
+#### DELETE
 
 删除在特定位置的信息。
 
-####OPTIONS
+#### OPTIONS
 
 为客户提供一个快速的方法来确定此URL支持哪些方法。从Flask 0.6开始，这是为您自动实现的。
 
-###静态文件
+### 静态文件
 
 动态的互联网应用也需要静态的文件。通常也是存储CSS和JavaScript文件的地方。
 理想情况下，您的Web服务器被配置为为您服务，但在开发期间，Flask也可以执行此操作。
@@ -279,7 +279,7 @@ url_for('static', filename='style.css')
 ```
 这个文件必须被保存在目录**static/style.css**的文件系统下。
 
-###模板渲染
+### 模板渲染
 
 在Python中生成HTML不是很有趣的事情，实际上很麻烦，因为您必须自行执行HTML转义以保护应用程序的安全。
 鉴于此，Flask默认使用[Jinjia2](http://jinja.pocoo.org/)模板引擎。
@@ -298,12 +298,12 @@ def hello(name=None):
 Flask将会在**templates**文件夹内寻找模板。所以，如果你的程序是一个模块的话，该文件夹位于模块的旁边，
 如果他是一个包的话，该文件夹位于包内。
 
-####示例1：模块
+#### 示例1：模块
     /application.py
     /templates
         /hello.html
         
-####示例2：包
+#### 示例2：包
     /application
         /__init__.py
         /templates
@@ -346,15 +346,15 @@ Markup('<em>Marked up</em> &raquo; HTML').striptags()
 ```
 版本0.5的变化：所有模板不再启用自动转译。模板的以下扩展名触发自动转义：.html，.htm，.xml，.xhtml。从字符串加载的模板将禁用自动转义。
 
-###获取请求数据
+### 获取请求数据
 
 对于Web应用程序，对客户端发送到服务器的数据做出反应至关重要。在Flask中,这些信息由全局变量**request**对象提供。
 如果你对Python有了解，也许会有疑问，为什么它可以是全局的（因为Python没有声明的全局、局部变量），并且Flask怎么
 保证的线程安全。答案书本地上下文环境(context locals)：
 
-###本地上下文(context locals)
+### 本地上下文(context locals)
 
-####内幕消息(Insider Information)
+#### 内幕消息(Insider Information)
 如果您想了解这些工作原理以及如何使用上下文本地实现测试，请阅读本节，否则只需跳过该部分。
 
 在Flask内有一些固定的全局对象，但是不是常规所说的那样的全局对象。
@@ -386,7 +386,7 @@ with app.request_context(environ):
     assert request.method == 'POST'
 ```
 
-###请求对象(Request Object)
+### 请求对象(Request Object)
 
 请求对象在API部分中有讲述，我们将不在此详细介绍，参加[request](http://flask.pocoo.org/docs/0.12/api/#flask.request)
 这是一些最常见的操作的概述。首先，你需要从 _flask_ 模块中引入:
@@ -424,7 +424,7 @@ searchword = request.args.get('key', '')
 
 如果想查看**request**对象的全部方法和属性，请点击[request](http://flask.pocoo.org/docs/0.12/api/#flask.request).
 
-###上传文档
+### 上传文档
 
 使用Flask，你可以轻易的处理文件的上传。请确保在你的HTML表单里设置 **enctype='multipart/form-data'** 属性。
 否则，浏览器不会发送你的文件滴。
@@ -457,7 +457,7 @@ def upload_file():
 想看更好的例子，请查阅[Uploading Files](http://flask.pocoo.org/docs/0.12/patterns/fileuploads/#uploading-files)
 
 
-###Cookies
+### Cookies
 
 可以使用[cookies](http://flask.pocoo.org/docs/0.12/api/#flask.Request.cookies)属性获取cookies。
 可以使用response对象的[set_cookie]方法设置cookies。request对象的[cookies](http://flask.pocoo.org/docs/0.12/api/#flask.Request.cookies)属性
@@ -491,7 +491,7 @@ def index():
 有时您可能想要在响应对象不存在的位置设置一个cookie。这可以使用[Defered Request Callbacks](http://flask.pocoo.org/docs/0.12/patterns/deferredcallbacks/#deferred-callbacks)模式来实现。
 这一部分请查阅[About Response](http://flask.pocoo.org/docs/0.12/quickstart/#about-responses)
 
-###重定向和错误(Redirects and Errors)
+### 重定向和错误(Redirects and Errors)
 
 要将用户重定向到另一个端点，请使用[redirect](http://flask.pocoo.org/docs/0.12/api/#flask.redirect)函数.
 要使用错误代码提前中止请求，请使用[abort](http://flask.pocoo.org/docs/0.12/api/#flask.abort)函数：
@@ -524,7 +524,7 @@ def page_not_found(error):
 
 更多细节，请查看[Error handler](http://flask.pocoo.org/docs/0.12/errorhandling/#error-handlers).
 
-###关于响应
+### 关于响应
 
 视图函数的返回值将自动转换为响应对象。如果返回值是一个字符串，则将其转换为响应对象，其中字符串作为响应体，
 200 OK状态代码和text / html mimetype。Flask将返回值转换为响应对象所使用的的逻辑如下：
@@ -550,7 +550,7 @@ def not_found(error):
     return resp
 ```
 
-###会话(sessions)
+### 会话(sessions)
 
 除了请求对象之外，还有一个名为[session](http://flask.pocoo.org/docs/0.12/api/#flask.session)的第二个对象，它允许您将特定于用户的信息从一个请求存储到下一个请求。
 这是在您的cookies之上实现的，并且用密码标识cookie。这意味着用户可以查看您的cookie的内容，但不修改它，除非他们知道用于签名的密钥。
@@ -590,7 +590,7 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 ```
 如果您不使用模板引擎（如本例所示），这里的[escape()](http://flask.pocoo.org/docs/0.12/api/#flask.escape)会为您转义。
 
-####如何生成好的密钥
+#### 如何生成好的密钥
 
 随机的问题是很难判断真正的随机性。密钥应尽可能随机.您的操作系统有方法根据加密随机生成器生成漂亮的随机东西，可以用于获取这样的密钥：
 ```python
@@ -602,7 +602,7 @@ os.urandom(24)
 
 除了默认的基于客户端的会话之外，如果要在服务器端处理会话，还有几个Flask扩展支持此功能。
 
-###消息闪烁(Message Flashing)
+### 消息闪烁(Message Flashing)
 
 良好的应用程序和用户界面都是关于反馈的。如果用户没有得到足够的反馈，他们可能会最终讨厌应用程序。Flask提供了一种非常简单的方法来向用户提供闪烁系统的反馈。
 消息闪烁使在请求结束时记录一个消息，并在下一个（而且只有下一个）请求中访问它变得简单。这通常与布局模板组合以展示消息。
@@ -611,7 +611,7 @@ os.urandom(24)
 您可以使用[get_flashed_messages()](http://flask.pocoo.org/docs/0.12/api/#flask.get_flashed_messages)获取消息，这个方法也可以在模板中使用。
 查阅[Message Flashing](http://flask.pocoo.org/docs/0.12/patterns/flashing/#message-flashing-pattern)获取更多示例。
 
-###Logging
+### Logging
 
 New in version 0.3。
 
@@ -630,7 +630,7 @@ app.logger.error('A error occurred')
 请前往[logging documentation](https://docs.python.org/library/logging.html)获取更多信息。
 更多[Application Errors](http://flask.pocoo.org/docs/0.12/errorhandling/#application-errors)
 
-###Hooking in WSGI Middlewares
+### Hooking in WSGI Middlewares
 
 如果要向应用程序添加WSGI中间件，则可以包装内部WSGI应用程序。
 例如，如果要使用Werkzeug软件包中的一个中间件来处理lighttpd中的错误，可以这样做：
@@ -639,9 +639,9 @@ from werkzeug.contrib.fixers import LighttpdCGIRootFix
 app.wsgi_app = LighttpdCGIRootFix(app.wsgi_app)
 ```
 
-###使用Flask扩展
+### 使用Flask扩展
 扩展是帮助您完成常见任务的软件包。例如，Flask-SQLAlchemy提供SQLAlchemy支持，使其易于与Flask一起使用。
 更多Flask扩展，请查看[Flask Extensions](http://flask.pocoo.org/docs/0.12/extensions/#extensions)
 
-###部署到Web服务器
+### 部署到Web服务器
 准备好部署你的新Flask应用了吗？参加[Deployment Options](http://flask.pocoo.org/docs/0.12/deploying/#deployment).

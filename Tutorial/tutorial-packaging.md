@@ -1,30 +1,30 @@
 **_写在开头：使用Pycharm创建installation.md文件，Pycharm居然不能识别，好奇怪，不得不改名了!_**
 
 ![image](D:\Python\flask\jianshu\flask.png)
-###Table Of Contents
+### Table Of Contents
 [Installation](http://flask.pocoo.org/docs/0.12/installation/#)
 - [(虚拟环境)virtualenv](http://flask.pocoo.org/docs/0.12/installation/#virtualenv)
 - [(全系统安装)System-Wide Installation](http://flask.pocoo.org/docs/0.12/installation/#system-wide-installation)
 - [试用最新版本](http://flask.pocoo.org/docs/0.12/installation/#living-on-the-edge)
 - [在Windows下的pip和setuptools](http://flask.pocoo.org/docs/0.12/installation/#pip-and-setuptools-on-windows)
 
-###版本
+### 版本
 [开发版](http://flask.pocoo.org/docs/dev/installation/)（不稳定）
 [Flask 0.12.x](http://flask.pocoo.org/docs/0.12/installation/)(稳定版)
 [Flask 0.11.x](http://flask.pocoo.org/docs/0.11/installation/)
 [Flask 0.10.x](http://flask.pocoo.org/docs/0.10/installation/)
 
-###PALLETS
+### PALLETS
 [The Pallets Projects are a collection of Python web development libraries.](http://www.palletsproject.com/)
 
-###相关主题(Related Topics)
+### 相关主题(Related Topics)
 [文档预览](http://flask.pocoo.org/docs/0.12/)
 - [Tutorial](http://flask.pocoo.org/docs/0.12/tutorial/)
   - 上一篇[步骤二：初始化应用](http://flask.pocoo.org/docs/0.12/tutorial/setup/)
   - 下一篇[步骤四：数据库连接flaskr](http://flask.pocoo.org/docs/0.12/tutorial/dbcon/)
   
 
-##以包的形式安装flaskr
+## 以包的形式安装flaskr
 Flask现在提供了对Click的内置支持。[Click](http://click.pocoo.org/)给Flask提供了加强的可扩展的命令行功能。
 在这篇教程的后部分，你将会看到怎么扩展Flask的命令行界面。
 
@@ -95,7 +95,7 @@ flask run
 您将看到一条消息，告诉您服务器,还有一个您可以访问的地址。
 当您浏览浏览器中的服务器时，您将收到404错误，因为我们还没有任何视图。稍后会解决这个问题，但首先应该让数据库工作。
 
-###外部可访问的服务器
+### 外部可访问的服务器
 想让你的服务器变成公用的吗？相关信息，请查看[externally visible server](http://flask.pocoo.org/docs/0.12/quickstart/#public-server)
 
 接下来[步骤四：数据库连接](http://flask.pocoo.org/docs/0.12/tutorial/dbcon/#tutorial-dbcon)

@@ -1,4 +1,4 @@
-##Flask应用测试
+## Flask应用测试
 
 **Something that is untested is broken.**
 上面这句话并不完全正确，但是距离事实也不远了，虽然不知道这句话从哪儿来的。
@@ -9,11 +9,11 @@
 Flask提供了一种通过暴露Werkzeug测试客户端，并为您处理上下文本地来测试应用程序的方法。
 你可以使用它搭建自己喜欢的测试方案。在这篇文档里，我们使用Python自带的**unittest**包。
 
-###应用程序
+### 应用程序
 首先，我们需要有一个待测试的应用程序，我们使用在[Tutorial](http://flask.pocoo.org/docs/0.12/tutorial/#tutorial)
 教程中编写的程序。如果你还没有这个程序，请从这里下载[the examples](https://github.com/pallets/flask/tree/master/examples/flaskr/)
 
-###测试骨架
+### 测试骨架
 为了便于测试，我们增加第二个模块**flaskr_tests.py**，并且创建一个单元测试的骨架:
 ```python
 import os
@@ -94,7 +94,7 @@ Ran 1 test in 0.034s
 OK
 ```
 
-###登陆和退出
+### 登陆和退出
 
 我们应用的大部分只对于管理员才有用，所以我们需要一种方式，让我们测试的客户可以登录、推出。
 为了这样做，我们使用所需的表单数据（用户名和密码）将一些请求发送到登录和注销页面。
@@ -126,7 +126,7 @@ def test_login_logout(self):
     assert b'Invalid passward' in rv.data
 ```
 
-###添加消息测试
+### 添加消息测试
 
 我们还应该测试添加消息是否有效。像下面这样添加一个测试方法：
 ```python
@@ -153,7 +153,7 @@ OK
 如果想测试更多关于返回头，和返回状态，请查看[MiniTwit Example](https://github.com/pallets/flask/tree/master/examples/minitwit/)
 包含了许多测试套件。
 
-###其他一些测试技巧
+### 其他一些测试技巧
 
 除了上面介绍的用户测试以外，还有另外一种测试方法，使用**test_request_context()**方法和**with**语句
 一起进行测试，以适当的方法激活请求。这种方法可以使你获得**request**,**g**,**session**对象，就像在试图函数中

@@ -1,23 +1,23 @@
 **_写在开头：使用Pycharm创建installation.md文件，Pycharm居然不能识别，好奇怪，不得不改名了!_**
 
 ![image](D:\Python\flask\jianshu\flask.png)
-###Table Of Contents
+### Table Of Contents
 [Installation](http://flask.pocoo.org/docs/0.12/installation/#)
 - [(虚拟环境)virtualenv](http://flask.pocoo.org/docs/0.12/installation/#virtualenv)
 - [(全系统安装)System-Wide Installation](http://flask.pocoo.org/docs/0.12/installation/#system-wide-installation)
 - [试用最新版本](http://flask.pocoo.org/docs/0.12/installation/#living-on-the-edge)
 - [在Windows下的pip和setuptools](http://flask.pocoo.org/docs/0.12/installation/#pip-and-setuptools-on-windows)
 
-###版本
+### 版本
 [开发版](http://flask.pocoo.org/docs/dev/installation/)（不稳定）
 [Flask 0.12.x](http://flask.pocoo.org/docs/0.12/installation/)(稳定版)
 [Flask 0.11.x](http://flask.pocoo.org/docs/0.11/installation/)
 [Flask 0.10.x](http://flask.pocoo.org/docs/0.10/installation/)
 
-###PALLETS
+### PALLETS
 [The Pallets Projects are a collection of Python web development libraries.](http://www.palletsproject.com/)
 
-###相关主题(Related Topics)
+### 相关主题(Related Topics)
 [文档预览](http://flask.pocoo.org/docs/0.12/)
 - [Tutorial](http://flask.pocoo.org/docs/0.12/tutorial/)
   - 上一篇[步骤一：数据库方案](http://flask.pocoo.org/docs/0.12/tutorial/schema/)
@@ -25,7 +25,7 @@
   
   
   
-##步骤二：初始化应用程序
+## 步骤二：初始化应用程序
 
 现在已经有数据库方案了，所以接下来你可以创建程序模块了，**flask.py**。这个文件需要放置在**flask/flask**目录下，
 在模块开始的几行是很重的必需的声明，之后是几行配置代码。对于像flaskr一样的小型应用来说，可以把配置
@@ -56,7 +56,7 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 **Config**对象，类似一个字典，所以可以使用新值替换。
 
-###数据库路径
+### 数据库路径
 
 操作系统知道当前进程的路径，不幸的是，对于web应用程序来时，不能这样认为，因为在一个进程中也许有多个程序在运行。
 
